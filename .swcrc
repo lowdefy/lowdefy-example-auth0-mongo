@@ -1,0 +1,12 @@
+{
+  "exclude": [".*.test.js$", ".*/tests/.*", ".*/__mocks__/.*"],
+  "jsc": {
+    "parser": {
+      "syntax": "ecmascript"
+    },
+    "target": "es2016"
+  },
+  "module": {
+    "type": "commonjs"
+  }
+}

@@ -1,0 +1,58 @@
+id: logged-out
+type: Box
+layout:
+  contentGutter: 16
+  contentJustify: center
+properties:
+  title: Logged Out
+events:
+  onMount:
+    - id: logged_in_redirect
+      type: Link
+      skip:
+        _eq:
+          - _user: id
+          - null
+      params:
+        home: true
+blocks:
+  - id: box
+    type: Box
+    layout:
+      contentAlign: center
+      contentGutter: 20
+      size: 800
+    style:
+      margin: 100px 20px
+    blocks:
+      - id: logo
+        type: Html
+        style:
+          textAlign: center
+        properties:
+          html: |
+            <img style="width: 80%; max-width: 250px;" src="/logo-light-theme.png" alt="RNR"/>
+      - id: login_button_box
+        type: Box
+        layout:
+          contentGutter: 20
+          contentJustify: center
+        style:
+          maxWidth: 300
+        blocks:
+          - id: login_button
+            type: Button
+            style:
+              margin: 40px
+            properties:
+              title: Login
+              icon: AiOutlineLogin
+              size: large
+              block: true
+            events:
+              onClick:
+                - id: login
+                  type: Login
+                  params:
+                    callbackUrl:
+                      pageId: logged-in

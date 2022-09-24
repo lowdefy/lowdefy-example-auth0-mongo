@@ -1,0 +1,9 @@
+id: new-page
+type: PageHeaderMenu
+properties:
+  title: New Page
+blocks:
+  - id: title
+    type: Title
+    properties:
+      content: New Page

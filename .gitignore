@@ -1,0 +1,8 @@
+.DS_Store
+**/.lowdefy/**
+**/.env
+**/node_modules/**
+**/dist/**
+!lowdefy/.lowdefy/cli.json
+**/coverage/**
+**/.yarn/**

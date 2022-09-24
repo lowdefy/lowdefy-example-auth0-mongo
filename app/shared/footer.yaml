@@ -1,0 +1,6 @@
+id: footer
+type: Paragraph
+properties:
+  type: secondary
+  content: |
+    <a href='https://lowdefy.com/'>Made with Lowdefy</a>

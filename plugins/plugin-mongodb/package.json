@@ -1,0 +1,22 @@
+{
+  "name": "@lowdefy/plugin-auth-mongodb",
+  "version": "0.2.3",
+  "license": "UNLICENSED",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./auth/adapters": "./src/auth/adapters.js",
+    "./types": "./src/types.js"
+  },
+  "files": [
+    "*"
+  ],
+  "scripts": {},
+  "dependencies": {
+    "@lowdefy/helpers": "~4.0.0-alpha.27",
+    "mongodb": "4.6.0",
+    "saslprep": "1.0.3",
+    "uuid": "8.3.2"
+  },
+  "devDependencies": {}
+}

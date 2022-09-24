@@ -1,0 +1,28 @@
+{
+  "name": "@lowdefy/starter-repo",
+  "description": "A lowdefy monorepo starter for Auth0 and MongoDB user auth.",
+  "version": "0.0.0",
+  "license": "UNLICENSED",
+  "private": true,
+  "packageManager": "pnpm@7.12.1",
+  "dependencies": {
+    "lowdefy": "4.0.0-alpha.33"
+  },
+  "scripts": {
+    "ldf:b": "pnpm -r --workspace-root --filter='@lowdefy/starter' lowdefy build",
+    "ldf:d": "pnpm -r --workspace-root --filter='@lowdefy/starter' lowdefy dev --log-level=debug --no-open",
+    "ldf:s": "pnpm -r --workspace-root --filter='@lowdefy/starter' lowdefy start",
+    "ldf": "pnpm -r --workspace-root --filter='@lowdefy/starter' lowdefy dev --no-open"
+  },
+  "devDependencies": {
+    "eslint": "8.16.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-import-resolver-node": "0.3.6",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jsx-a11y": "6.5.1",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-react": "7.30.0",
+    "eslint-plugin-react-hooks": "4.5.0",
+    "prettier": "2.6.2"
+  }
+}

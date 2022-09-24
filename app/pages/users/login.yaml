@@ -1,0 +1,33 @@
+id: login
+type: Box
+events:
+  onMount:
+    - id: logged_in_redirect
+      type: Link
+      skip:
+        _eq:
+          - _user: id
+          - null
+      params:
+        _get:
+          key: links.0.pageId
+          from:
+            _menu: default
+    - id: logout
+      type: Logout
+      skip:
+        _eq:
+          - _url_query: error
+          - null
+      params:
+        callbackUrl:
+          url: AUTH0_LOGOUT
+    - id: login
+      type: Login
+      skip:
+        _ne:
+          - _user: id
+          - null
+      params:
+        callbackUrl:
+          pageId: logged-in

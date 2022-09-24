@@ -1,0 +1,10 @@
+show: true
+feature:
+  saveAsImage:
+    show: true
+    title: false
+    name:
+      _var: imageFilename
+  dataView:
+    show: true
+    title: false

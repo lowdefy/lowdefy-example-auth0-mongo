@@ -1,0 +1,24 @@
+- id: default
+  links:
+    - id: new-page
+      type: MenuLink
+      properties:
+        title: New Page
+        icon: FaRunning
+      pageId: new-page
+
+    - id: admin
+      type: MenuGroup
+      properties:
+        title: Admin
+      links:
+        - id: users
+          type: MenuLink
+          properties:
+            title: Users
+          pageId: users
+        - id: invites
+          type: MenuLink
+          properties:
+            title: Invites
+          pageId: invites

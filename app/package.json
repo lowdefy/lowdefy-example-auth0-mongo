@@ -1,0 +1,13 @@
+{
+  "name": "@lowdefy/starter",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "lowdefy": "lowdefy"
+  },
+  "dependencies": {
+    "lowdefy": "4.0.0-alpha.33"
+  }
+}

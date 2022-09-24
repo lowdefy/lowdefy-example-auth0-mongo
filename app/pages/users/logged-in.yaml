@@ -1,0 +1,11 @@
+id: logged-in
+type: Box
+events:
+  onMount:
+    - id: logged_in_redirect
+      type: Link
+      params:
+        _get:
+          key: links.0.pageId
+          from:
+            _menu: default

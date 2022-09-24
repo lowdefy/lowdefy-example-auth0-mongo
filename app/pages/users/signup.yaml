@@ -1,0 +1,15 @@
+id: signup
+type: Box
+events:
+  onMount:
+    - id: signup
+      type: Login
+      params:
+        callbackUrl:
+          pageId: logged-in
+        authUrlQueryParams:
+          prompt: login
+          screen_hint: signup
+          login_hint:
+            _base64.decode:
+              _url_query: hint

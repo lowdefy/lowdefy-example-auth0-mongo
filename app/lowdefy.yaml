@@ -1,0 +1,83 @@
+lowdefy: 4.0.0-alpha.33
+version: 0.0.0
+name: Lowdefy Starter
+
+plugins:
+  - name: '@lowdefy/plugin-auth-mongodb'
+    version: 'workspace:*'
+
+config:
+  homePageId: login
+
+auth:
+  authPages:
+    signIn: '/login'
+  adapter:
+    id: mdb_adapter
+    type: MongoDBAdapter
+    properties:
+      invite:
+        required: true
+      databaseUri:
+        _secret: MONGODB_URI
+  callbacks:
+    - id: auth0_logout
+      type: Auth0LogoutCallback
+      properties:
+        clientId:
+          _secret: AUTH0_CLIENT_ID
+        issuer:
+          _secret: AUTH0_ISSUER
+        returnToPagedId: logged-out
+  providers:
+    - id: auth0
+      type: Auth0Provider
+      properties:
+        clientId:
+          _secret: AUTH0_CLIENT_ID
+        clientSecret:
+          _secret: AUTH0_CLIENT_SECRET
+        issuer:
+          _secret: AUTH0_ISSUER
+  userFields:
+    id: user.id
+    profile: user.profile
+    app_attributes: user.app_attributes
+    roles: user.roles
+  pages:
+    protected: true
+    public:
+      - login
+      - logged-out
+      - '404'
+      - signup
+    roles:
+      user-admin:
+        - users
+        - invites
+        - new-invite
+        - edit-user
+
+global:
+  _ref: global.yaml
+
+menus:
+  _ref: menus.yaml
+
+connections:
+  _ref: connections.yaml
+
+pages:
+  - _ref: pages/new-page/new-page.yaml
+
+  - _ref: pages/users/edit-profile.yaml
+  - _ref: pages/users/edit-user.yaml
+  - _ref: pages/users/logged-in.yaml
+  - _ref: pages/users/logged-out.yaml
+  - _ref: pages/users/login.yaml
+  - _ref: pages/users/new-invite.yaml
+  - _ref: pages/users/profile.yaml
+  - _ref: pages/users/signup.yaml
+  - _ref: pages/users/users.yaml
+  - _ref: pages/users/invites.yaml
+  - _ref: pages/404/404.yaml

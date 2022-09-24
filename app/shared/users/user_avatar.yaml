@@ -1,0 +1,39 @@
+id: user_profile_link
+type: Box
+layout:
+  contentGutter: 8
+  contentAlign: middle
+events:
+  onClick:
+    - id: link_to_profile
+      type: Link
+      params:
+        pageId: profile
+blocks:
+  - id: user_name
+    type: Html
+    layout:
+      flex: 0 1 auto
+    style:
+      color: white
+    visible:
+      _gt:
+        - _media: width
+        - 992
+    properties:
+      html:
+        _if_none:
+          - _user: profile.name
+          - _user: name
+  - id: user_avatar
+    type: Avatar
+    layout:
+      flex: 0 1 auto
+    properties:
+      size: large
+      src:
+        _user: profile.picture
+      alt:
+        _if_none:
+          - _user: profile.name
+          - _user: name
