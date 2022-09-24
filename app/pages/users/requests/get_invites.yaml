@@ -24,7 +24,5 @@ properties:
           $dateToString:
             date: $created.timestamp
             format: '%Y/%m/%d'
-    - $addFields:
-        app_attributes.companies: $app_attributes.companies.Name
     - $sort:
         inviteEmail: 1

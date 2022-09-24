@@ -51,13 +51,6 @@ blocks:
             - label: Last Name
               value:
                 _user: profile.family_name
-            - label: Companies
-              value:
-                _nunjucks:
-                  template: '{% for item in companies %}{{ item.Name }}, {% else %}None{% endfor %}'
-                  on:
-                    companies:
-                      _user: app_attributes.companies
       - id: edit_profile_button
         type: Button
         layout:

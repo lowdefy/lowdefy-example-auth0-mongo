@@ -67,9 +67,6 @@ blocks:
                 - headerName: Last name
                   field: profile.family_name
                   width: 150
-                - headerName: Companies
-                  field: app_attributes.companies
-                  width: 200
                 - headerName: Roles
                   field: roles
                   width: 200

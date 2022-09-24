@@ -28,7 +28,5 @@ properties:
                 - string
             - ✅
             - ⛔️
-    - $addFields:
-        app_attributes.companies: $app_attributes.companies.Name
     - $sort:
         email: 1
